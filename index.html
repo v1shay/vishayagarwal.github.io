@@ -5,6 +5,11 @@
   <title>Vishay Agarwal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+
   <style>
     body {
       font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -13,21 +18,58 @@
       padding: 0 24px;
       color: #111;
       line-height: 1.6;
+      background-color: #fafafa;
     }
 
     :root {
-      --accent: #1d4ed8; /* classy academic blue */
+      --accent-blue: #2563eb;
+      --accent-purple: #7c3aed;
+      --accent-green: #059669;
+    }
+
+    h1, h2 {
+      font-family: "Space Grotesk", Inter, sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      margin-top: 120px;
+      margin-bottom: 24px;
     }
 
     .card {
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
+      background: white;
+      border-radius: 16px;
       padding: 24px;
       margin-bottom: 20px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
+
+    /* Project-specific subtle color accents */
+    .projects .card:nth-child(2) {
+      border-left: 4px solid var(--accent-blue);
+      background: linear-gradient(90deg, rgba(37,99,235,0.06), white 40%);
+    }
+
+    .projects .card:nth-child(3) {
+      border-left: 4px solid var(--accent-purple);
+      background: linear-gradient(90deg, rgba(124,58,237,0.06), white 40%);
+    }
+
+    .projects .card:nth-child(4) {
+      border-left: 4px solid var(--accent-green);
+      background: linear-gradient(90deg, rgba(5,150,105,0.06), white 40%);
     }
 
     a {
-      color: var(--accent);
+      color: var(--accent-blue);
       font-weight: 500;
       text-decoration: none;
     }
@@ -37,120 +79,96 @@
     }
 
     strong {
-      font-size: 1.1rem;
+      font-weight: 600;
     }
   </style>
 </head>
 
 <body>
 
-<!-- HERO SECTION -->
-<div style="text-align:center; margin-top:80px;">
+  <!-- HERO -->
+  <div style="text-align:center; margin-top:80px;">
+    <img
+      src="profile.jpg"
+      alt="Vishay Agarwal"
+      style="
+        width:160px;
+        height:160px;
+        object-fit:cover;
+        border-radius:50%;
+        margin-bottom:24px;
+      "
+    />
 
-  <img 
-    src="profile.jpg"
-    alt="Vishay"
-    style="
-      width:160px;
-      height:160px;
-      object-fit:cover;
-      border-radius:50%;
-      margin-bottom:24px;
-    "
-  />
+    <h1 style="font-size:2.6rem; margin-bottom:8px;">Vishay Agarwal</h1>
 
-  <h1 style="font-size:2.6rem; margin-bottom:8px;">Vishay Agarwal</h1>
+    <p style="font-size:1.1rem; color:#444;">
+      Class of 2029 • Lynbrook High School
+    </p>
 
-  <p style="font-size:1.1rem; color:#444;">
-    Class of 2029 • Lynbrook High School
-  </p>
+    <p style="max-width:600px; margin:32px auto; font-size:1.05rem;">
+      I’m interested in the intersection of computer science, machine learning, and design.
+      I enjoy building technical systems with real-world impact while exploring creativity
+      through art, outreach, and visual storytelling.
+    </p>
+  </div>
 
-  <p style="max-width:600px; margin:32px auto; font-size:1.05rem;">
-    I’m interested in the intersection of computer science, machine learning, and design.
-    I enjoy building technical systems with real-world impact while exploring creativity
-    through art, outreach, and visual storytelling.
-  </p>
+  <!-- PROJECTS -->
+  <div class="projects">
+    <h2>Projects</h2>
 
-</div>
+    <div class="card">
+      <strong>Neuro-Sense</strong>
+      <p>Speech-based neurological risk estimation using machine learning.</p>
+      <a href="https://github.com/v1shay/neuro-sense" target="_blank">View on GitHub →</a>
+    </div>
 
-<!-- PROJECTS -->
-<h2 style="margin-top:120px;">Projects</h2>
-  
-<div class="card">
-  <strong>Neuro-Sense</strong>
-  <p>
-    Speech-based neurological risk estimation using machine learning.
-  </p>
-  <a href="https://github.com/v1shay/neuro-sense" target="_blank">
-    View on GitHub →
-  </a>
-</div>
+    <div class="card">
+      <strong>Sentinel-LLM</strong>
+      <p>Detecting hallucination risk in large language model outputs.</p>
+      <a href="https://github.com/v1shay/sentinel-llm" target="_blank">View on GitHub →</a>
+    </div>
 
-<div class="card">
-  <strong>Sentinel-LLM</strong>
-  <p>
-    Detecting hallucination risk in large language model outputs.
-  </p>
-  <a href="https://github.com/v1shay/sentinel-llm" target="_blank">
-    View on GitHub →
-  </a>
-</div>
+    <div class="card">
+      <strong>Phyto-Vision</strong>
+      <p>CNN-based plant disease detection using transfer learning.</p>
+      <a href="https://github.com/v1shay/phyto-vision" target="_blank">View on GitHub →</a>
+    </div>
+  </div>
 
-<div class="card">
-  <strong>Phyto-Vision</strong>
-  <p>
-    CNN-based plant disease detection using transfer learning.
-  </p>
-  <a href="https://github.com/v1shay/phyto-vision" target="_blank">
-    View on GitHub →
-  </a>
-</div>
+  <!-- LEADERSHIP -->
+  <h2>Leadership & Activities</h2>
 
-<!-- LEADERSHIP -->
-<h2 style="margin-top:120px;">Leadership & Activities</h2>
+  <ul style="font-size:1.05rem; line-height:1.8;">
+    <li>
+      <strong>Founder, NovaSTEM</strong><br>
+      Student-led nonprofit designing hands-on STEM experiments to engage younger students
+      in physics, chemistry, and biology through curiosity-driven learning.
+    </li>
+    <br>
+    <li>
+      <strong>Founder, Uplift Art Foundation</strong><br>
+      Creative outreach initiative producing personalized cards for pediatric patients
+      to provide emotional support during hospital stays.
+    </li>
+    <br>
+    <li>
+      <strong>FBLA</strong><br>
+      Competitive business and technology organization focused on problem-solving
+      and case-based analysis.
+    </li>
+  </ul>
 
-<ul style="font-size:1.05rem; line-height:1.8;">
-  <li>
-    <strong>Founder, NovaSTEM</strong><br>
-    Student-led nonprofit designing hands-on STEM experiments to engage younger students
-    in physics, chemistry, and biology through curiosity-driven learning.
-  </li>
-  <br>
-  <li>
-    <strong>Founder, Uplift Art Foundation</strong><br>
-    Creative outreach initiative producing personalized cards for pediatric patients
-    to provide emotional support during hospital stays.
-  </li>
-  <br>
-  <li>
-    <strong>FBLA</strong><br>
-    Competitive business and technology organization focused on problem-solving
-    and case-based analysis.
-  </li>
-</ul>
+  <!-- CONTACT -->
+  <h2>Contact</h2>
 
-<!-- CONTACT -->
-<h2 style="margin-top:120px;">Contact</h2>
+  <p>The best way to reach me is via email or GitHub.</p>
 
-<p style="font-size:1.05rem;">
-  The best way to reach me is via email or GitHub.
-</p>
-
-<ul style="font-size:1.05rem;">
-  <li>
-    📧 <a href="mailto:v.agrwl17@gmail.com">v.agrwl17@gmail.com</a>
-  </li>
-  <li>
-    💻 <a href="https://github.com/v1shay" target="_blank">
-      github.com/v1shay
-    </a>
-  </li>
-  <li>
-    📄 <a href="https://docs.google.com/document/d/1WzZJZBH80DKdhlGDDp_C0U5lvuMLdMok/edit?usp=sharing" target="_blank">
-      Resume (PDF)
-    </a>
-  </li>
-</ul>
+  <ul style="font-size:1.05rem;">
+    <li>📧 <a href="mailto:v.agrwl17@gmail.com">v.agrwl17@gmail.com</a></li>
+    <li>💻 <a href="https://github.com/v1shay" target="_blank">github.com/v1shay</a></li>
+    <li>📄 <a href="https://docs.google.com/document/d/1WzZJZBH80DKdhlGDDp_C0U5lvuMLdMok/edit?usp=sharing" target="_blank">Resume (PDF)</a></li>
+  </ul>
 
 </body>
 </html>
