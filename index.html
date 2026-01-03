@@ -8,7 +8,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -17,233 +17,204 @@
       --green: #059669;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: Inter, sans-serif;
       max-width: 900px;
       margin: 80px auto;
       padding: 0 24px;
+      background: #fafafa;
       color: #111;
       line-height: 1.65;
-      background-color: #fafafa;
     }
 
-    h1, h2 {
-      font-family: "Space Grotesk", Inter, sans-serif;
-      letter-spacing: -0.02em;
+    h1, h2, h3 {
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: -0.03em;
     }
 
-    h1 {
-      font-size: 2.6rem;
-    }
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.1rem; margin-top: 120px; }
+    h3 { font-size: 1.25rem; margin-bottom: 6px; }
 
-    h2 {
-      margin-top: 120px;
-      margin-bottom: 28px;
-      font-size: 1.9rem;
-    }
+    p { color: #333; }
 
-    p {
-      color: #333;
-    }
-
-    a {
-      font-weight: 500;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    strong {
-      font-weight: 600;
-    }
+    a { text-decoration: none; }
 
     /* HERO BUTTONS */
-    .hero-buttons {
-      margin-top: 32px;
-    }
-
     .hero-btn {
       display: inline-block;
       padding: 12px 22px;
       margin: 6px;
-      font-size: 0.95rem;
-      font-weight: 500;
       border-radius: 10px;
-      text-decoration: none;
-      background-color: var(--blue);
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: var(--blue);
       color: white;
-      transition: all 0.2s ease;
+      transition: 0.2s;
+    }
+
+    .hero-btn.secondary {
+      background: transparent;
+      color: var(--blue);
+      border: 2px solid var(--blue);
     }
 
     .hero-btn:hover {
       transform: translateY(-2px);
-      background-color: #1d4ed8;
+      opacity: 0.95;
     }
 
-    .hero-btn.outline {
-      background-color: transparent;
-      color: var(--blue);
-      border: 1.5px solid var(--blue);
-    }
-
-    .hero-btn.outline:hover {
-      background-color: var(--blue);
-      color: white;
-    }
-
-    /* BASE CARD */
+    /* PROJECT CARDS */
     .card {
-      background: white;
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 20px;
+      padding: 26px;
+      border-radius: 18px;
+      margin-bottom: 22px;
       border: 1px solid #e5e7eb;
       box-shadow: 0 1px 2px rgba(0,0,0,0.04);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
 
-    /* PROJECT COLOR VARIANTS */
     .project-blue {
-      border-left: 5px solid var(--blue);
-      background:
-        linear-gradient(
-          90deg,
-          rgba(37,99,235,0.10) 0%,
-          rgba(37,99,235,0.05) 20%,
-          white 45%
-        );
+      border-left: 6px solid var(--blue);
+      background: linear-gradient(90deg,
+        rgba(37,99,235,0.12),
+        rgba(37,99,235,0.05) 25%,
+        white 50%);
     }
 
     .project-purple {
-      border-left: 5px solid var(--purple);
-      background:
-        linear-gradient(
-          90deg,
-          rgba(124,58,237,0.10) 0%,
-          rgba(124,58,237,0.05) 20%,
-          white 45%
-        );
+      border-left: 6px solid var(--purple);
+      background: linear-gradient(90deg,
+        rgba(124,58,237,0.12),
+        rgba(124,58,237,0.05) 25%,
+        white 50%);
     }
 
     .project-green {
-      border-left: 5px solid var(--green);
-      background:
-        linear-gradient(
-          90deg,
-          rgba(5,150,105,0.10) 0%,
-          rgba(5,150,105,0.05) 20%,
-          white 45%
-        );
+      border-left: 6px solid var(--green);
+      background: linear-gradient(90deg,
+        rgba(5,150,105,0.12),
+        rgba(5,150,105,0.05) 25%,
+        white 50%);
     }
 
-    ul {
-      padding-left: 20px;
+    .project-btn {
+      display: inline-block;
+      margin-top: 8px;
+      font-weight: 600;
+      color: var(--blue);
     }
 
-    li {
-      margin-bottom: 22px;
+    /* LEADERSHIP BUTTONS (DIFFERENT SHAPE) */
+    .pill-btn {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: var(--blue);
+      transition: 0.15s;
     }
 
-    #contact {
-      margin-bottom: 120px;
+    .pill-btn:hover {
+      background: var(--blue);
+      color: white;
+    }
+
+    /* CONTACT BUTTONS */
+    .contact-btn {
+      display: inline-block;
+      margin: 8px 10px 0 0;
+      padding: 10px 18px;
+      border-radius: 8px;
+      background: #111;
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: 0.2s;
+    }
+
+    .contact-btn.secondary {
+      background: transparent;
+      color: #111;
+      border: 2px solid #111;
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-2px);
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <div style="text-align:center;">
-    <img
-      src="profile.jpg"
-      alt="Vishay Agarwal"
-      style="width:160px;height:160px;object-fit:cover;border-radius:50%;margin-bottom:24px;"
-    />
+<!-- HERO -->
+<div style="text-align:center;">
+  <img src="profile.jpg" style="width:160px;height:160px;border-radius:50%;margin-bottom:24px;" />
+  <h1>Vishay Agarwal</h1>
+  <p>Class of 2029 • Lynbrook High School</p>
 
-    <h1>Vishay Agarwal</h1>
+  <p style="max-width:600px;margin:36px auto;">
+    I build machine learning systems and products at the intersection of AI, healthcare, and environmental impact — from neurological risk detection to plant disease diagnosis. I focus on turning research ideas into systems people can actually use.
+  </p>
 
-    <p style="font-size:1.1rem; color:#555;">
-      Class of 2029 • Lynbrook High School
-    </p>
+  <a href="#projects" class="hero-btn">View Selected Projects</a>
+  <a href="https://github.com/v1shay" target="_blank" class="hero-btn secondary">GitHub</a>
+  <a href="#contact" class="hero-btn secondary">Resume</a>
+</div>
 
-    <p style="max-width:600px; margin:36px auto; font-size:1.05rem;">
-      I build machine learning systems and products at the intersection of AI, healthcare, and environmental impact — from neurological risk detection to plant disease diagnosis. I focus on turning research ideas into systems people can actually use.
-    </p>
+<!-- PROJECTS -->
+<h2 id="projects">Selected Projects</h2>
 
-    <div class="hero-buttons">
-      <a href="#projects" class="hero-btn">View Selected Projects</a>
-      <a href="https://github.com/v1shay" target="_blank" class="hero-btn outline">GitHub</a>
-      <a href="#contact" class="hero-btn outline">Resume</a>
-    </div>
-  </div>
+<div class="card project-blue">
+  <h3>Neuro-Sense</h3>
+  <p>Speech-based neurological risk estimation using machine learning.</p>
+  <a class="project-btn" href="https://github.com/v1shay/neuro-sense" target="_blank">View on GitHub →</a>
+</div>
 
-  <!-- PROJECTS -->
-  <div class="projects">
-    <h2 id="projects">Selected Projects</h2>
+<div class="card project-purple">
+  <h3>Sentinel-LLM</h3>
+  <p>Detecting hallucination risk in large language model outputs.</p>
+  <a class="project-btn" href="https://github.com/v1shay/sentinel-llm" target="_blank">View on GitHub →</a>
+</div>
 
-    <div class="card project-blue">
-      <strong>Neuro-Sense</strong>
-      <p>Speech-based neurological risk estimation using machine learning.</p>
-      <a href="https://github.com/v1shay/neuro-sense" target="_blank">View on GitHub →</a>
-    </div>
+<div class="card project-green">
+  <h3>Phyto-Vision</h3>
+  <p>CNN-based plant disease detection using transfer learning.</p>
+  <a class="project-btn" href="https://github.com/v1shay/phyto-vision" target="_blank">View on GitHub →</a>
+</div>
 
-    <div class="card project-purple">
-      <strong>Sentinel-LLM</strong>
-      <p>Detecting hallucination risk in large language model outputs.</p>
-      <a href="https://github.com/v1shay/sentinel-llm" target="_blank">View on GitHub →</a>
-    </div>
+<!-- LEADERSHIP -->
+<h2>Leadership & Activities</h2>
 
-    <div class="card project-green">
-      <strong>Phyto-Vision</strong>
-      <p>CNN-based plant disease detection using transfer learning.</p>
-      <a href="https://github.com/v1shay/phyto-vision" target="_blank">View on GitHub →</a>
-    </div>
-  </div>
+<p><strong>Founder, NovaSTEM</strong><br>
+Student-led nonprofit delivering hands-on STEM experiments to younger students.<br>
+<a class="pill-btn">View more</a></p>
 
-  <!-- LEADERSHIP -->
-  <h2>Leadership & Activities</h2>
+<p><strong>Founder, Uplift Art Foundation</strong><br>
+Creative outreach initiative producing personalized artwork for pediatric patients.<br>
+<a class="pill-btn">View more</a></p>
 
-  <ul>
-    <li>
-      <strong>Founder, NovaSTEM</strong><br>
-      Student-led nonprofit delivering hands-on STEM experiments to younger students.
-      <br><a href="#" style="font-size:0.95rem; color:var(--blue);">View more →</a>
-    </li>
+<p><strong>FBLA</strong><br>
+Competitive business and technology organization focused on case-based analysis.</p>
 
-    <li>
-      <strong>Founder, Uplift Art Foundation</strong><br>
-      Creative outreach initiative producing personalized artwork for pediatric patients.
-      <br><a href="#" style="font-size:0.95rem; color:var(--blue);">View more →</a>
-    </li>
+<!-- CONTACT -->
+<h2 id="contact">Let’s Connect</h2>
 
-    <li>
-      <strong>FBLA</strong><br>
-      Competitive business and technology organization focused on case-based analysis.
-    </li>
-  </ul>
+<p>I’m always open to conversations about AI, ML, and building meaningful products.</p>
 
-  <!-- CONTACT -->
-  <div id="contact">
-    <h2>Let’s Connect</h2>
-    <p>The best way to contact me is via email or GitHub</p>
-
-    <ul>
-      <li><a href="mailto:v.agrwl17@gmail.com">v.agrwl17@gmail.com</a></li>
-      <li><a href="https://github.com/v1shay" target="_blank">github.com/v1shay</a></li>
-      <li><a href="https://docs.google.com/document/d/1WzZJZBH80DKdhlGDDp_C0U5lvuMLdMok/edit?usp=sharing" target="_blank">Resume (PDF)</a></li>
-    </ul>
-  </div>
+<a class="contact-btn" href="mailto:v.agrwl17@gmail.com">Email</a>
+<a class="contact-btn secondary" href="https://github.com/v1shay" target="_blank">GitHub</a>
+<a class="contact-btn secondary" href="https://docs.google.com/document/d/1WzZJZBH80DKdhlGDDp_C0U5lvuMLdMok/edit" target="_blank">Resume</a>
 
 </body>
 </html>
