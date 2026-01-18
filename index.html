@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
-  <!-- ADDITION: Lenis (smooth inertia) -->
+  <!-- Lenis (smooth inertia) -->
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
 
   <style>
@@ -40,23 +40,22 @@
       height: 100vh;
       overflow-y: scroll;
       scroll-snap-type: y mandatory;
-      -webkit-overflow-scrolling: touch; /* ADDITION */
+      -webkit-overflow-scrolling: touch;
     }
 
     .snap-section {
-      min-height: 100svh; /* ADDITION: mobile-safe */
+      min-height: 100svh;
       scroll-snap-align: start;
       display: flex;
       flex-direction: column;
       justify-content: center;
 
-      /* ADDITION: fade base */
+      /* Fade base */
       opacity: 0;
       transform: translateY(40px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
-    /* ADDITION */
     .snap-section.is-visible {
       opacity: 1;
       transform: translateY(0);
@@ -265,13 +264,11 @@
 
 </main>
 
-<!-- ADDITION: JS (non-invasive) -->
 <script>
+  /* Lenis — correct configuration */
   const lenis = new Lenis({
-    wrapper: document.querySelector('.snap-container'),
-    content: document.querySelector('.snap-container'),
-    lerp: 0.08,
-    smooth: true
+    smooth: true,
+    lerp: 0.08
   });
 
   function raf(time) {
@@ -280,6 +277,7 @@
   }
   requestAnimationFrame(raf);
 
+  /* Fade-in observer */
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
