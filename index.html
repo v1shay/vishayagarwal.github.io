@@ -24,11 +24,27 @@
     body {
       font-family: Inter, sans-serif;
       max-width: 920px;
-      margin: 120px auto;
+      margin: 0 auto;
       padding: 0 26px;
       background: #fafafa;
       color: #111;
       line-height: 1.8;
+      overflow: hidden; /* REQUIRED for snap scroll */
+    }
+
+    /* SNAP SCROLL */
+    .snap-container {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+    }
+
+    .snap-section {
+      min-height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     h1, h2, h3 {
@@ -43,7 +59,6 @@
 
     h2 {
       font-size: 2.6rem;
-      margin-top: 170px;
       margin-bottom: 48px;
     }
 
@@ -124,7 +139,7 @@
       color: var(--blue);
     }
 
-    /* LEADERSHIP CONTAINERS */
+    /* LEADERSHIP */
     .leadership-pill {
       border: 2px solid var(--burgundy);
       border-radius: 999px;
@@ -150,7 +165,7 @@
       box-shadow: 0 8px 18px rgba(127,29,29,0.35);
     }
 
-    /* CONTACT BUTTONS */
+    /* CONTACT */
     .contact-btn {
       display: inline-block;
       margin: 14px 18px 0 0;
@@ -172,84 +187,83 @@
 
 <body>
 
-<!-- HERO -->
-<div style="text-align:center;">
-  <img src="profile.jpg" style="width:175px;height:175px;border-radius:50%;margin-bottom:28px;" />
-  <h1>Vishay Agarwal</h1>
-  <p>Class of 2029 • Lynbrook High School</p>
+<main class="snap-container">
 
-  <p style="max-width:660px;margin:48px auto;">
-    I build machine learning systems and products at the intersection of AI, healthcare, and environmental impact — from neurological risk detection to plant disease diagnosis. I focus on turning research ideas into systems people can actually use.
-  </p>
+  <!-- HERO -->
+  <section class="snap-section">
+    <div style="text-align:center;">
+      <img src="profile.jpg" style="width:175px;height:175px;border-radius:50%;margin-bottom:28px;" />
+      <h1>Vishay Agarwal</h1>
+      <p>Class of 2029 • Lynbrook High School</p>
 
-  <a href="#projects" class="hero-btn">View Selected Projects</a>
-  <a href="https://github.com/v1shay" target="_blank" class="hero-btn">GitHub</a>
-  <a href="#contact" class="hero-btn">Resume</a>
-</div>
+      <p style="max-width:660px;margin:48px auto;">
+        I build machine learning systems and products at the intersection of AI, healthcare, and environmental impact — from neurological risk detection to plant disease diagnosis. I focus on turning research ideas into systems people can actually use.
+      </p>
 
-<!-- PROJECTS -->
-<h2 id="projects">Selected Projects</h2>
+      <a href="#projects" class="hero-btn">View Selected Projects</a>
+      <a href="https://github.com/v1shay" target="_blank" class="hero-btn">GitHub</a>
+      <a href="#contact" class="hero-btn">Resume</a>
+    </div>
+  </section>
 
-<div class="card project-blue">
-  <h3>Neuro-Sense</h3>
-  <p>Speech-based neurological risk estimation using machine learning.</p>
-  <a class="project-btn" href="https://github.com/v1shay/neuro-sense" target="_blank">View on GitHub →</a>
-</div>
+  <!-- PROJECTS -->
+  <section class="snap-section" id="projects">
+    <h2>Selected Projects</h2>
 
-<div class="card project-orange">
-  <h3>Sentinel-LLM</h3>
-  <p>Detecting hallucination risk in large language model outputs.</p>
-  <a class="project-btn" href="https://github.com/v1shay/sentinel-llm" target="_blank">View on GitHub →</a>
-</div>
+    <div class="card project-blue">
+      <h3>Neuro-Sense</h3>
+      <p>Speech-based neurological risk estimation using machine learning.</p>
+      <a class="project-btn" href="https://github.com/v1shay/neuro-sense" target="_blank">View on GitHub →</a>
+    </div>
 
-<div class="card project-green">
-  <h3>Phyto-Vision</h3>
-  <p>CNN-based plant disease detection using transfer learning.</p>
-  <a class="project-btn" href="https://github.com/v1shay/phyto-vision" target="_blank">View on GitHub →</a>
-</div>
+    <div class="card project-orange">
+      <h3>Sentinel-LLM</h3>
+      <p>Detecting hallucination risk in large language model outputs.</p>
+      <a class="project-btn" href="https://github.com/v1shay/sentinel-llm" target="_blank">View on GitHub →</a>
+    </div>
 
-<!-- LEADERSHIP -->
-<h2>Leadership & Activities</h2>
+    <div class="card project-green">
+      <h3>Phyto-Vision</h3>
+      <p>CNN-based plant disease detection using transfer learning.</p>
+      <a class="project-btn" href="https://github.com/v1shay/phyto-vision" target="_blank">View on GitHub →</a>
+    </div>
+  </section>
 
-<div class="leadership-pill">
-  <strong style="font-size:1.35rem;">Founder, NovaSTEM</strong><br>
-  Student-led nonprofit delivering hands-on STEM experiments to younger students.
-  <br>
-  <a
-    href="https://novastem.vercel.app"
-    target="_blank"
-    class="leadership-btn"
-  >
-    View more →
-  </a>
-</div>
+  <!-- LEADERSHIP -->
+  <section class="snap-section">
+    <h2>Leadership & Activities</h2>
 
-<div class="leadership-pill">
-  <strong style="font-size:1.35rem;">Founder, Uplift Art Foundation</strong><br>
-  Creative outreach initiative producing personalized artwork for pediatric patients.
-  <br>
-  <a
-    href="https://uplift-art.vercel.app"
-    target="_blank"
-    class="leadership-btn"
-  >
-    View more →
-  </a>
-</div>
+    <div class="leadership-pill">
+      <strong style="font-size:1.35rem;">Founder, NovaSTEM</strong><br>
+      Student-led nonprofit delivering hands-on STEM experiments to younger students.
+      <br>
+      <a href="https://novastem.vercel.app" target="_blank" class="leadership-btn">View more →</a>
+    </div>
 
-<p>
-  <strong style="font-size:1.35rem;">FBLA</strong><br>
-  Competitive business and technology organization focused on case-based analysis.
-</p>
+    <div class="leadership-pill">
+      <strong style="font-size:1.35rem;">Founder, Uplift Art Foundation</strong><br>
+      Creative outreach initiative producing personalized artwork for pediatric patients.
+      <br>
+      <a href="https://uplift-art.vercel.app" target="_blank" class="leadership-btn">View more →</a>
+    </div>
 
-<!-- CONTACT -->
-<h2 id="contact">Let’s Connect</h2>
+    <p>
+      <strong style="font-size:1.35rem;">FBLA</strong><br>
+      Competitive business and technology organization focused on case-based analysis.
+    </p>
+  </section>
 
-<p>I’m always open to conversations about AI, machine learning, and building meaningful products.</p>
+  <!-- CONTACT -->
+  <section class="snap-section" id="contact">
+    <h2>Let’s Connect</h2>
+    <p>I’m always open to conversations about AI, machine learning, and building meaningful products.</p>
 
-<button class="contact-btn" onclick="location.href='mailto:v.agrwl17@gmail.com'">Email</button>
-<button class="contact-btn" onclick="window.open('https://github.com/v1shay')">GitHub</button>
-<button class="contact-btn" onclick="window.open('https://docs.google.com/document/d/1WzZJZBH80DKdhlGDDp_C0U5lvuMLdMok/edit')">Resume</button>
+    <button class="contact-btn" onclick="location.href='mailto:v.agrwl17@gmail.com'">Email</button>
+    <button class="contact-btn" onclick="window.open('https://github.com/v1shay')">GitHub</button>
+    <button class="contact-btn" onclick="window.open('https://docs.google.com/document/d/1WzZJZBH80DKdhlGDDp_C0U5lvuMLdMok/edit')">Resume</button>
+  </section>
+
+</main>
 
 </body>
 </html>
